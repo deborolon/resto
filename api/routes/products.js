@@ -4,7 +4,7 @@ const authMiddleware = require("../middlewares/auth");
 const adminMiddleware = require("../middlewares/admin");
 
 //GET ALL
-app.get("/", authMiddleware, async (req, res) => {
+app.get("/products", authMiddleware, async (req, res) => {
   try {
     let data = await sequelize.query("SELECT * FROM products", {
       type: sequelize.QueryTypes.SELECT,
